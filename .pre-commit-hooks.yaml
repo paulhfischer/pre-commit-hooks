@@ -1,0 +1,131 @@
+- id: format-general
+  name: Format most files
+  entry: prettier
+  language: node
+  args:
+      - --config=./.prettierrc
+      - --list-different
+      - --write
+  additional_dependencies:
+      - prettier@^2.1.0
+      - --legacy-peer-deps
+  types: [file]
+  exclude: (^node_modules|\.html$|\.php$|\.js$|\.jsx$|\.ts$|\.tsx$|\.css$|\.scss$|\.sass$)
+- id: format-web
+  name: Format HTML & PHP
+  entry: js-beautify
+  language: node
+  args:
+      - --config=./.jsbeautifyrc
+      - --type=html
+      - --replace
+  additional_dependencies:
+      - js-beautify@^1.13.0
+      - --legacy-peer-deps
+  types: [file]
+  files: \.(html|php)$
+  exclude: (^node_modules)
+- id: lint-css
+  name: Lint (S)CSS
+  entry: stylelint
+  language: node
+  args:
+      - --config=./.stylelintrc
+      - --fix
+  additional_dependencies:
+      - stylelint@^8.0.0
+      - stylelint-config-airbnb@^0.0.0
+      - stylelint-scss@^1.2.1
+      - stylelint-order@^0.7.0
+      - --legacy-peer-deps
+  types: [file]
+  files: \.(css|scss|sass|html|php)$
+  exclude: (^node_modules|\.min\.css$)
+- id: lint-javascript
+  name: Lint JS
+  entry: eslint
+  language: node
+  args:
+      - --config=./.eslintrc
+      - --fix
+  additional_dependencies:
+      - eslint@^7.15.0
+      - eslint-config-airbnb-base@^14.2.0
+      - eslint-config-prettier@^7.0.0
+      - eslint-plugin-prettier@^3.3.0
+      - eslint-plugin-import@^2.22.0
+      - eslint-plugin-jsx-a11y@^6.4.0
+      - prettier@^2.2.0
+      - --legacy-peer-deps
+  types: [file]
+  files: \.(js)$
+  exclude: (^node_modules|\.min\.js$)
+- id: lint-javascript-react
+  name: Lint JS(X)
+  entry: eslint
+  language: node
+  args:
+      - --config=./.eslintrc
+      - --fix
+  additional_dependencies:
+      - eslint@^7.15.0
+      - eslint-config-airbnb@^18.2.0
+      - eslint-config-prettier@^7.0.0
+      - eslint-plugin-prettier@^3.3.0
+      - eslint-plugin-import@^2.22.0
+      - eslint-plugin-jsx-a11y@^6.4.0
+      - eslint-plugin-react@^7.21.0
+      - eslint-plugin-react-hooks@^4.2.0
+      - prettier@^2.2.0
+      - --legacy-peer-deps
+  types: [file]
+  files: \.(js|jsx)$
+  exclude: (^node_modules|\.min\.js$)
+- id: lint-typescript
+  name: Lint JS & TS
+  entry: eslint
+  language: node
+  args:
+      - --config=./.eslintrc
+      - --fix
+  additional_dependencies:
+      - eslint@^7.15.0
+      - '@typescript-eslint/parser@^4.10.0'
+      - '@typescript-eslint/eslint-plugin@^4.10.0'
+      - eslint-config-airbnb-typescript@^12.0.0
+      - eslint-config-airbnb-base@^14.2.0
+      - eslint-config-prettier@^7.0.0
+      - eslint-plugin-prettier@^3.3.0
+      - eslint-plugin-import@^2.22.0
+      - eslint-plugin-jsx-a11y@^6.4.0
+      - typescript@^4.1.0
+      - prettier@^2.2.0
+      - --legacy-peer-deps
+  types: [file]
+  files: \.(js|ts)$
+  exclude: (^node_modules|\.min\.js$)
+- id: lint-typescript-react
+  name: Lint JS(X) & TS(X)
+  entry: eslint
+  language: node
+  args:
+      - --config=./.eslintrc
+      - --fix
+  additional_dependencies:
+      - eslint@^7.15.0
+      - '@typescript-eslint/parser@^4.10.0'
+      - '@typescript-eslint/eslint-plugin@^4.10.0'
+      - eslint-config-airbnb-typescript@^12.0.0
+      - eslint-config-airbnb@^18.2.0
+      - eslint-config-prettier@^7.0.0
+      - eslint-plugin-prettier@^3.3.0
+      - eslint-plugin-import@^2.22.0
+      - eslint-plugin-jsx-a11y@^6.4.0
+      - eslint-plugin-react@^7.21.0
+      - eslint-plugin-react-hooks@^4.2.0
+      - typescript@^4.1.0
+      - prettier@^2.2.0
+      - --legacy-peer-deps
+  types: [file]
+  files: \.(js|jsx|ts|tsx)$
+  exclude: (^node_modules|\.min\.js$)
