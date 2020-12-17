@@ -41,7 +41,8 @@ Recommended `.jsbeautifyrc`:
 {
     "wrap_line_length": 100,
     "wrap_attributes": "force-expand-multiline",
-    "end_with_newline": true
+    "end_with_newline": true,
+    "content_unformatted": ["pre", "style", "script"]
 }
 ```
 
@@ -69,6 +70,7 @@ Recommended `.eslintrc`:
 
 ```json
 {
+    "plugins": ["html", "jinja2"],
     "extends": ["airbnb-base", "prettier", "plugin:prettier/recommended"],
     "env": {
         "browser": true,
@@ -91,7 +93,7 @@ Recommended `.eslintrc`:
 
 ```json
 {
-    "plugins": ["@typescript-eslint"],
+    "plugins": ["@typescript-eslint", "html", "jinja2"],
     "extends": [
         "airbnb-base",
         "airbnb/hooks",
@@ -131,7 +133,7 @@ Recommended `.eslintrc`:
         "project": "./tsconfig.json",
         "createDefaultProgram": true
     },
-    "plugins": ["@typescript-eslint"],
+    "plugins": ["@typescript-eslint", "html", "jinja2"],
     "extends": [
         "airbnb-typescript/base",
         "plugin:@typescript-eslint/recommended",
@@ -188,7 +190,7 @@ Recommended `.eslintrc`:
         "project": "./tsconfig.json",
         "createDefaultProgram": true
     },
-    "plugins": ["@typescript-eslint"],
+    "plugins": ["@typescript-eslint", "html", "jinja2"],
     "extends": [
         "airbnb-typescript",
         "airbnb/hooks",

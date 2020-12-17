@@ -52,9 +52,12 @@
       - eslint-plugin-prettier@^3.3.0
       - eslint-plugin-import@^2.22.0
       - eslint-plugin-jsx-a11y@^6.4.0
+      - eslint-plugin-html@^6.1.0
+      - eslint-plugin-jinja2@^0.1.0
       - prettier@^2.2.0
+      - --legacy-peer-deps
   types: [file]
-  files: \.(js)$
+  files: \.(js|html|php)$
   exclude: (^node_modules|\.min\.js$)
 - id: lint-javascript-react
   name: Lint JS(X)
@@ -72,9 +75,12 @@
       - eslint-plugin-jsx-a11y@^6.4.0
       - eslint-plugin-react@^7.21.0
       - eslint-plugin-react-hooks@^4.2.0
+      - eslint-plugin-html@^6.1.0
+      - eslint-plugin-jinja2@^0.1.0
       - prettier@^2.2.0
+      - --legacy-peer-deps
   types: [file]
-  files: \.(js|jsx)$
+  files: \.(js|jsx|html|php)$
   exclude: (^node_modules|\.min\.js$)
 - id: lint-typescript
   name: Lint JS & TS
@@ -93,10 +99,13 @@
       - eslint-plugin-prettier@^3.3.0
       - eslint-plugin-import@^2.22.0
       - eslint-plugin-jsx-a11y@^6.4.0
+      - eslint-plugin-html@^6.1.0
+      - eslint-plugin-jinja2@^0.1.0
       - typescript@^4.1.0
       - prettier@^2.2.0
+      - --legacy-peer-deps
   types: [file]
-  files: \.(js|ts)$
+  files: \.(js|ts|html|php)$
   exclude: (^node_modules|\.min\.js$)
 - id: lint-typescript-react
   name: Lint JS(X) & TS(X)
@@ -117,8 +126,11 @@
       - eslint-plugin-jsx-a11y@^6.4.0
       - eslint-plugin-react@^7.21.0
       - eslint-plugin-react-hooks@^4.2.0
+      - eslint-plugin-html@^6.1.0
+      - eslint-plugin-jinja2@^0.1.0
       - typescript@^4.1.0
       - prettier@^2.2.0
+      - --legacy-peer-deps
   types: [file]
-  files: \.(js|jsx|ts|tsx)$
+  files: \.(js|jsx|ts|tsx|html|php)$
   exclude: (^node_modules|\.min\.js$)
